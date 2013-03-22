@@ -8,39 +8,12 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" />                
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
-                <script type="text/javascript">
-                    (function($) {
-                        var url = 'http://www.toniportfolio.com/api/get_recent_posts/';
-                        $.ajax({
-                           type: 'GET',
-                            url: url,
-                            async: false,
-                            jsonpCallback: 'jsonCallback',
-                            contentType: "application/json",
-                            dataType: 'jsonp',
-                            success: function(data) {
-                                var i;
-                                var titleBlog = "";
-                                for(i=0; i<data.posts.length; i++){                                    
-                                    titleBlog += '<li><a href="#entryBlog" data-transition="flip" id="">' + data.posts[i].title + '</a></li>';
-                                }                                
-                               $('ul[data-role=listview]').append(titleBlog);
-                               $('ul[data-role=listview]').listview('refresh');
-                               
-                            },
-                            error: function(e) {
-                               console.log(e.message);
-                            }
-                        });
-
-                        })(jQuery);
-                        
-                </script>  
+                 
 	</head>
-	<body>		
+        <body>		
             <div data-role="page" data-theme="a" id="blog">
                 <div data-role="header" data-position="inline">
-                        <h1>Blog Web Developer</h1>
+                    <h1>Blog Web Developer</h1>
                 </div>
                 <div data-role="content">
                     <ul data-role="listview"></ul>                    
@@ -59,7 +32,7 @@
             <div data-role="page" data-theme="a" id="entryBlog">
                 <div data-role="header" data-position="inline">
                     <a href="#blog" data-transition="flip" data-direction="reverse" data-icon="back">Back</a>
-                        <h1>Title Entrada</h1>
+                    <h1>Title Entrada</h1>
                 </div>
                 <div data-role="content">
                     <p>Page 2</p>                    
